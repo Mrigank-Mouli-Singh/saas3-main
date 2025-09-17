@@ -1,0 +1,15 @@
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "frontend/dist"
+
+# You can also set env var here, or via the Netlify UI
+[build.environment]
+  # Replace after backend is live:
+  VITE_API_URL = "https://<your-backend>.onrender.com/api"
+
+# Optional: redirect all routes to index.html for SPA
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
